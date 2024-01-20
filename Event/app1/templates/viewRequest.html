@@ -1,0 +1,331 @@
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,thead,tbody,td,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    {% if key2 %}
+    <table>
+        <thead>
+            <th>Username</th>
+            <th>Plan Name </th>
+            <th>Event Name </th>
+            <th>Hotel Name </th>
+            <th>Location </th>
+            <th>Date </th>
+            <th>Time </th>
+            <th>People Count </th>
+            <th>Total Amount</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            {% for i in key2 %}
+            <tr>
+                <td>{{i.user_id}}</td>
+                <td>{{i.plan_name}}</td>
+                <td>{{i.event_name}}</td>
+                <td>{{i.hotel_name}}</td>
+                <td>{{i.location}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.time}}</td>
+                <td>{{i.people_count}}</td>
+                <td>{{i.total_amount}}</td>
+                <td>{{i.status}}</td>
+                {% if i.status == "Pending" %}
+                <td><a href="/approve/{{i.id}}">approve</a>
+                <td><a href="/reject/{{i.id}}">reject   </a></td>
+                {% endif %}
+
+            </tr>
+        </tbody>    
+        {% endfor %}
+    </table>
+    {% endif %}
+    <a href="/adminPage/">Back</a>
+</body>
+</html> -->
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+table,thead,tbody,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 500px;
+    }
+th{
+    color: #ffffff;
+}
+
+.mdb-color{
+    background-color: #2E2E2E;
+}
+/* SOUL */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #000e8d, #5989b6);
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg,#000e8d, #5989b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #5972b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ 
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ .btn{
+    background: linear-gradient(135deg,rgb(109, 50, 50),rgb(255, 10, 2));
+    width: 35%;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   border: none;
+ }
+ form .btn input:hover{
+  transform: scale(0.99);
+  background: linear-gradient(-135deg,rgb(109, 50, 50),rgb(255, 10, 2));
+ }
+ .card{
+    height: auto;
+    width: 1500px;
+    border-radius: 20px;
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 100px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #000e8d, #5989b6);
+ }
+ form .button input:hover{
+  transform: scale(0.99);
+  background: linear-gradient(-135deg, #000e8d, #5989b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+a.button {
+    background: linear-gradient(135deg,rgb(109, 50, 50),rgb(255, 10, 2));
+    border-radius: 100px;
+    color: #fff;
+    font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   border: none;
+   ;
+}
+
+    </style>
+</head>
+<body>
+    <!-- {% if key1 %}
+    <div class="container">
+        <div class="title">Updation</div>
+        <div class="content">
+          <form method="POST">
+            {% csrf_token %} 
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">User Name</span>
+                <input type="text" name="uname" value="{{key1.uname}}" required>
+              </div> 
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="email" name="email" value="{{key1.email}}" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Phone Number</span>
+                <input type="number" name="phone" value="{{key1.phone}}" required>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="Save Changes"><br><br>
+            </div>
+            
+          </form>
+          <input type="submit" value="Back" class="btn" style="margin-left: 35%;" onclick="history.back()">
+        </div>
+      </div>
+   {% endif %}
+   
+   {% if key2 %}
+
+   <div class="card mb-4">
+    <div class="card-body">
+    <table class="table table-hover">
+        <thead class="mdb-color">
+            <th>User Name</th>
+            <th>Email </th>
+            <th>Phone </th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            {% for i in key2 %}
+            <tr class="text-black">
+                <td>{{i.uname}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.phone}}</td>
+                <td><a href="/update/{{i.id}}">Update</a>    /   <a href="/delete/{{i.id}}">Delete</a></td>
+            </tr>
+        </tbody>    
+        {% endfor %}
+    </table>
+    <a href="/adminPage/" class="btn" style="width: 10%; margin-left: 75%;">Home</a>
+    {% endif %} -->
+    <body>
+        {% if key2 %}
+        <div class="card mb-4">
+            <div class="card-body">
+            <table class="table table-hover">
+            <thead class="mdb-color">
+                <th>Username</th>
+                <th>Plan Name </th>
+                <th>Event Name </th>
+                <th>Hotel Name </th>
+                <th>Location </th>
+                <th>Date </th>
+                <th>Time </th>
+                <th>People Count </th>
+                <th>Total Amount</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                {% for i in key2 %}
+                <tr class="text-black">
+                    <td>{{i.user_id}}</td>
+                    <td>{{i.plan_name}}</td>
+                    <td>{{i.event_name}}</td>
+                    <td>{{i.hotel_name}}</td>
+                    <td>{{i.location}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.time}}</td>
+                    <td>{{i.people_count}}</td>
+                    <td>{{i.total_amount}}</td>
+                    <td>{{i.status}}</td>
+                    {% if i.status == "Pending" %}
+                    <td><a href="/approve/{{i.id}}">approve</a>
+                    <td><a href="/reject/{{i.id}}">reject   </a></td>
+                    {% endif %}
+    
+                </tr>
+            </tbody>    
+            {% endfor %}
+        </table>
+        {% endif %}
+        <a href="/adminPage/" class="btn" style="width: 10%; margin-left: 75%;">Home</a>
+    </body>
+    
+</body>
+</html>

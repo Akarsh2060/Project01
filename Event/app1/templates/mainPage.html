@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MainPage</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+      <link href='' rel='stylesheet'>
+ 
+      <script type='text/javascript' src=''></script>
+      <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+      <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+      <script type='text/javascript'></script> 
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="/static/assets/css/style2.css" rel="stylesheet">
+  <link href="/static/css/bgimage.css" rel="stylesheet">
+</head>
+
+<body class="body">
+<script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+    </script>
+  <header id="header" class="fixed-top header-inner-pages" style="background-color: #f35e5e;">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/mainPage/"><b style="font-size: larger;">Z</b>EVENT</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="/mainPage/">Home</a></li>
+          <li class="dropdown"><a href="#"><span>Choose My Plan</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              {% for i in c %}
+              <li><a href="/choosePlan/{{i.id}}">{{i.category_type}}</a></li> 
+              {% endfor %} 
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/myEvent/">My Event</a></li>
+          <li><a class="nav-link scrollto" href="/history/">Payment History</a></li>
+          <li><a class="nav-link   scrollto" href="/logOut/">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="/mainPage/">Home</a></li>
+          <li>Welcome</li>
+        </ol>
+        <h2>Welcome To  <b>Z</b>EVENT</h2>
+
+      </div>
+    </section>
+
+    <section class="inner-page">
+      <div class="container">
+        <p>
+          We provide all you need for a perfect party whatever the size, theme or location. From the importance of delectable catering, perfect venue sourcing or beautiful marquees, fabulous props, creative floral displays, stunning lighting, music and entertainment.
+
+​
+
+        <p>With meticulous attention to detail, whatever the size or budget. Providing you and your guests a unique experience in the UK or Overseas.</p>
+        </p>
+      </div>
+    </section>
+    <div class="demo">
+    
+      <div class="container" style="padding-left: 10%; padding-bottom: 200px;">
+      <div class="row">
+        <h2 style="padding-top: 50px;">Our Event Plans Are Given Below:</h2>
+      <div class="col-md-3 col-sm-6">
+        
+      <div class="pricingTable">
+      <div class="pricingTable-header">
+        
+      <i class="fa fa-adjust"></i>
+      <div class="price-value">50000/-<span class="month">Prefered For Birthday</span> </div>
+      </div>
+      <h3 class="heading">Gold</h3>
+      <div class="pricing-content">
+      <ul>
+        <li>Birthday Cakes</li>
+        <li>Ambient Lighting</li>
+        <li>Decorations</li>
+        <li>Cancel Any Time</li>
+        <li>Before The Date</li>
+        <li>Food Provided <b>250/head</b></li>
+        <li>End to End Support</li>
+        <li>*Half Amount Refundable</li>
+        <li> Due To Cancellation</li>
+        <li>20 Years Of Experience</li>
+      </ul>
+      </div>
+      <div class="pricingTable-signup">
+      <a href="/choosePlan/5">Choose</a>
+      </div>
+      </div>
+      </div>
+      
+      <div class="col-md-3 col-sm-6">
+      <div class="pricingTable green">
+      <div class="pricingTable-header">
+      <i class="fa fa-briefcase"></i>
+      <div class="price-value"> 75000/-<span class="month">Prefered For Marriage</span> </div>
+      </div>
+      <h3 class="heading">Platinum</h3>
+      <div class="pricing-content">
+      <ul>
+        <li>Music Band</li>
+        <li>Sound System</li>
+        <li>Ambient Lighting</li>
+        <li>Decorations</li>
+        <li>Fireworks</li>
+        <li>Catering Service</li>
+        <li>Food Provided <b>500/head</b></li>
+        <li>End to End Support</li>
+        <li>20 Years Of Experience</li>
+        <li>Amount Is Refundable</li>
+      </ul>
+      </div>
+      <div class="pricingTable-signup">
+      <a href="/choosePlan/4">Choose</a>
+      </div>
+      </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+      <div class="pricingTable blue">
+      <div class="pricingTable-header">
+      <i class="fa fa-diamond"></i>
+      <div class="price-value">100000/-<span class="month">Prefered For Grand Functions</span> </div>
+      </div>
+      <h3 class="heading">Diamond</h3>
+      <div class="pricing-content">
+      <ul>
+        <li>Stage Management</li>
+        <li>Bouncers</li>
+        <li>DJ</li>
+        <li>Sound System</li>
+        <li>Ambient Lighting</li>
+        <li>Decorations</li>
+        <li>Fireworks</li>
+        <li>Catering Service</li>
+        <li>Food Provided <b>750/head</b></li>
+        <li>End to End Support</li>
+      </ul>
+      </div>
+      <div class="pricingTable-signup">
+      <a href="/choosePlan/3">Choose</a>
+      
+      </div>
+      </div>
+      </div>
+      <footer >
+        <div >
+          <div >
+            <div class="row">
+      
+              <div class="col-lg-3 col-md-6 footer-contact">
+  </main>
+  <section class="inner-page">
+    <div class="container">
+      <div class="about_taital_box">
+        <h1 class="about_taital_1" style="text-align: center; font-size: 30px;">Food Details</h1>
+        <p class=" about_text">Delicious food is a cornerstone of diverse events, adding a flavorful dimension to celebrations and gatherings. At weddings, the culinary experience is a highlight, showcasing the couple's preferences through an array of appetizers, a sumptuous main course, and an intricately designed wedding cake. Corporate events also recognize the impact of delightful cuisine, fostering a positive atmosphere with well-catered meals that encourage networking and collaboration.</p>
+        <p class=" about_text">Family gatherings and festive occasions are synonymous with mouthwatering feasts, where traditional dishes become a source of comfort and connection to cultural heritage. Cultural and religious festivals bring forth unique and delectable treats, turning the celebration into a flavorful expression of identity and tradition.</p>
+        <p class=" about_text">Culinary events and food festivals are dedicated solely to the celebration of food, drawing enthusiasts to indulge in a variety of cuisines and flavors. Sports events have evolved beyond standard stadium fare, offering fans a diverse menu of gourmet options that elevate the game day experience.</p>
+          </div>
+          </div>
+
+  <!-- ======= Footer ======= -->
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Zevent</h3>
+            <p>
+              Zevent,Kerala <br>
+              Trivandrum, PIN 695602<br>
+              India <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Quality Food</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Free Catering</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Stage Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Additional Arrangements</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Contact Us :</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Zevent</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>
